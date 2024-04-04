@@ -1,0 +1,357 @@
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  color: #000000;
+}
+
+/* navbar */
+#shopping-bag {
+  position: relative;
+}
+
+#shopping-bag .quantity-badge {
+  display: inline-block;
+  padding: 1px 5px;
+  background-color: red;
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  right: -10px;
+}
+
+.navbar-a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgb(255, 255, 255, 0.8);
+  border-bottom: 1px solid #513c28;
+  box-shadow: 0px 10px 50px #000000;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar-a .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #D20062;
+  font-style: italic;
+}
+
+.navbar-a .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar-a .navbar-u {
+  margin-left: 450px;
+}
+
+.navbar-a .navbar-u a {
+  color: #000;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+
+.navbar-a .navbar-u a:hover {
+  color: #D20062;
+}
+
+.navbar-a .navbar-u a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar-a .navbar-u a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar-a .navbar-extra a {
+  color: #000;
+  margin: 0 0.5rem;
+}
+
+.navbar-a .navbar-extra a:hover {
+  color: #D20062;
+}
+
+#menu {
+  display: none;
+}
+
+/* Shopping Cart */
+.shopping-cart {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  height: 100vh;
+  width: 35rem;
+  padding: 0 1.5rem;
+  background-color: #fff;
+  color: var(--bg);
+  transition: 0.3s;
+}
+
+.shopping-cart.active {
+  display: flex;
+  flex-direction: column;
+  right: 0;
+}
+
+.shopping-cart .cart-item {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #666;
+  position: relative;
+}
+
+.shopping-cart img {
+  height: 6rem;
+  border-radius: 50%;
+}
+
+.shopping-cart h3 {
+  font-size: 1.6rem;
+  padding-bottom: 0.5rem;
+}
+
+.shopping-cart .item-price {
+  font-size: 1.2rem;
+}
+
+.shopping-cart .remove-item {
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.shopping-cart .remove-item:hover {
+  color: var(--primary);
+}
+
+.shopping-cart .cart-item #add,
+.shopping-cart .cart-item #remove {
+  display: inline-block;
+  padding: 2px 5px;
+  cursor: pointer;
+  margin: 0 8px;
+  background-color: #D20062;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/*promosi*/
+.promosi {
+  background-color: #D20062;
+  text-align: center;
+  padding: 20px;
+}
+
+.promosi a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*pilihan*/
+.pilihan-button {
+  width: 100%;
+  text-align: center;
+}
+
+.pilihan-button .pilihan-button-box {
+  margin: 1.5em 7%;
+}
+
+.pilihan-button .pilihan-button-box button {
+  color: #D20062;
+  margin: 10px;
+  padding: 13px 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 2px solid #D20062;
+}
+
+.pilihan-button .pilihan-button-box button:hover {
+  color: #fff;
+  background-color: #D20062;
+}
+
+/*promosi2*/
+.promosi2 {
+  width: 100%;
+}
+
+.promosi2 .promosi2-box {
+  margin: 0 7%;
+  color: #fff;
+}
+
+.promosi2 .promosi2-box .promosi2-card {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.promosi2 .promosi2-box .promosi2-card img {
+  border-radius: 50%;
+  border: 2px solid #D20062;
+}
+
+/*iklan*/
+.iklan {
+  
+}
+
+.iklan .iklan-box {
+  margin: 1.4em 7%;
+  text-align: center;
+}
+
+.iklan .iklan-box h2 {
+  margin-bottom: 20px;
+}
+
+.iklan .iklan-box img {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+}
+
+.iklan2 {
+  margin: 2em 7%;
+  text-align: center;
+}
+
+.iklan2 img {
+  width: 100%;
+  height: 120px;
+  border-radius: 10px;
+}
+/*tentang kami*/
+.tentang-kami {
+  
+}
+
+.tentang-kami .tentang-kami-box {
+  margin: 1.4em 7%;
+}
+
+.tentang-kami .tentang-kami-box h2 {
+  margin-bottom: 20px;
+}
+
+.tentang-kami .tentang-kami-box img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.tentang-kami .tentang-kami-box .judul {
+  margin: 20px 0;
+  font-size: 25px;
+}
+
+.tentang-kami .tentang-kami-box p {
+  font-size: 15px;
+}
+
+/*produk*/
+.produk1 {
+  margin: 1.4em 7%;
+}
+
+.produk1 .produk1-box h2 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/*produk baru*/
+.produk-baru {
+  
+}
+
+.produk-baru .produk-baru-card {
+  margin: 0.5em 7%;
+}
+
+.produk-baru .produk-baru-card img:hover {
+  opacity: 0.5;
+}
+
+/*pencarian*/
+.navbar-u .container-fluid button {
+  color: #D20062; 
+  border-color: #D20062;
+}
+
+.navbar-u .container-fluid button:hover {
+  background-color: #D20062;
+  color: #fff;
+  border: none;
+}
+
+/*footer*/
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #D20062;
+}
+
+.footer .footer-box {
+  margin: 0 7%;
+  padding: 10px 0;
+  border-bottom: 2px solid #fff;
+}
+
+.footer .footer-box .row .col a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer .footer-box2 p {
+  padding-top: 20px;
+  color: #fff;
+}
+
+/*responsive*/
+@media screen and (max-width: 768px) {
+  .navbar-a .navbar-u {
+    margin-left: 0;
+  }
+  
+  .navbar-a .navbar-u a {
+    display: none;
+  }
+
+  .navbar-a .navbar-extra a {
+    display: none;
+  }
+  
+  #menu {
+    display: flex;
+  }
+}

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecommerce Fashion Marcell</title>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- mystyle -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <link rel="stylesheet" href="../css/login.css" />
+    
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar-a">
+      <a href="../index.html" class="navbar-logo">Logonya</a>
+      
+      <div class="navbar-u">
+        <a href="#home">Home</a>
+        <a href="#partner">Partner</a>
+        <a href="#produk">Product</a>
+        <a href="#payment">Payment</a>
+      </div>
+      
+     <div class="navbar-extra">
+        <a href="#" id="bell"><i data-feather="bell"></i></a>
+        <a href="#" id="user"><i data-feather="user"></i></a>
+        <a href="checkout.html" id="shopping-bag"><i data-feather="shopping-bag"></i></a>
+        <a href="#" id="menu"><i data-feather="menu"></i></a>
+      </div>
+    </nav>
+    
+    <center><div class="wrapper">
+         <div class="title-text">
+            <div class="title login">
+               Masuk
+            </div>
+            <div class="title signup">
+               Buat Akun
+            </div>
+         </div>
+         <div class="form-container">
+            <div class="slide-controls">
+               <input type="radio" name="slide" id="login" checked>
+               <input type="radio" name="slide" id="signup">
+               <label for="login" class="slide login">Login</label>
+               <label for="signup" class="slide signup">Registrasi</label>
+               <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+               <form action="#" class="login">
+                  <div class="field">
+                     <input type="text" placeholder="Masukan Email" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Masukan Password" required>
+                  </div>
+                  <div class="pass-link">
+                     <a href="#">Lupa password?</a>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Login">
+                  </div>
+                  <div class="signup-link">
+                     Belum Punya Akun? <a href="">Daftar Sekarang</a>
+                  </div>
+               </form>
+               <form action="#" class="signup">
+                  <div class="field">
+                     <input type="text" placeholder="Masukan Email" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Masukan Password" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Konfirmasi password" required>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Daftar">
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div></center>
+      <script>
+         const loginText = document.querySelector(".title-text .login");
+         const loginForm = document.querySelector("form.login");
+         const loginBtn = document.querySelector("label.login");
+         const signupBtn = document.querySelector("label.signup");
+         const signupLink = document.querySelector("form .signup-link a");
+         signupBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "-50%";
+           loginText.style.marginLeft = "-50%";
+         });
+         loginBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "0%";
+           loginText.style.marginLeft = "0%";
+         });
+         signupLink.onclick = (()=>{
+           signupBtn.click();
+           return false;
+         });
+      </script>
+      
+    <div class="footer-second">
+      <div class="footer-second-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-box">
+                    <h2>Tentang Kami</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam repellendus sunt praesentium aspernatur iure molestias.</p>
+                    <button>Hubungi Kami</button>
+                    <div class="card-area">
+                            <i class="fa fa-cc-visa"></i>
+                            <i class="fa fa-credit-card"></i>
+                            <i class="fa fa-cc-mastercard"></i>
+                            <i class="fa fa-cc-paypal"></i>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-box">
+                        <h2>Kategori</h2>
+                    <ul>
+                        <li><a href="#">Casual Style</a></li>
+                        <li><a href="#">Chic Style</a></li>
+                        <li><a href="#">Streetwear Look</a></li>
+                        <li><a href="#">Edgy Look</a></li>
+                        <li><a href="#">Vintage Style</a></li>
+                        <li><a href="#">Preppy Look</a></li>
+                    </ul>
+                    </div>                    
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-box">
+                        <h2>Contack</h2>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Telegram</a></li>
+                        <li><a href="#">Nomor Telepon</a></li>
+                        <li><a href="#">Whastapp</a></li>
+                    </ul>
+                    </div>                    
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-box">
+                        <h2>Newsletter</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloremque earum similique fugiat nobis. Facere?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    <footer class="footer">
+      <div class="footer-box">
+      <div class="row row-cols-1 row-cols-md-5">
+        <div class="col">
+          <a href="">Tentang Fashionku</a>
+        </div>
+        <div class="col">
+          <a href="">Kebijakan privasi</a>
+        </div>
+        <div class="col">
+          <a href="">Hubungi kami</a>
+        </div>
+        <div class="col">
+          <a href="">Pesyaratan & ketentuan</a>
+        </div>
+        <div class="col">
+          <a href="">Bantuan</a>
+        </div>
+      </div>
+      </div>
+      <div class="footer-box2">
+        <p>&copy;2024 Original website by marcell</p>
+      </div>
+    </footer>
+    
+    <!-- feather icon -->
+    <script>
+      feather.replace();
+    </script>
+    
+    <script src="../js/script.js"></script>
+    
+    <script src="../js/bootstrap.min.js"></script>
+  </body>
+</html>

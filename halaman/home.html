@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecommerce Fashion Marcell</title>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- mystyle -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <link rel="stylesheet" href="../css/home.css" />
+    
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <script src="../src/app.js"></script>
+  </head>
+  <body>
+    <div class="promosi">
+      <a href="#">UBAH HIDUPMU DENGAN MENGUBAH GAYA FASHION MU | SEKARANG</a>
+    </div>
+    <!-- navbar -->
+    <nav class="navbar-a" x-data>
+      <a href="../index.html" class="navbar-logo">Logonya</a>
+      
+      <div class="navbar-u">
+  <div class="container-fluid">
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Cari barang impianmu" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit"><i data-feather="search"></i></button>
+    </form>
+  </div>
+      </div>
+      
+     <div class="navbar-extra">
+        <a href="#" id="bell"><i data-feather="bell"></i></a>
+        <a href="login.html" id="user"><i data-feather="user"></i></a>
+        <a href="#" id="shopping-bag">
+          <i data-feather="shopping-bag"></i>
+          <span class="quantity-badge" x-show="$store.cart.quantity" x-text="$store.cart.quantity"></span>
+        </a>
+        <a href="#" id="menu"><i data-feather="menu"></i></a>
+      </div>
+      
+      <div class="shopping-cart">
+      <template x-for="(item, index) in $store.cart.items">
+      <div class="cart-item">
+        <img :src="`../img/$(item.img)`" :alt="item.name">
+        <div class="item-detail">
+          <h3 x-text="item.name"></h3>
+          <div class="item-price">
+            <span x-text="item.price"></span> &times;
+            <button id="remove">&minus;</button>
+            <span x-text="item.quantity"></span>
+            <button id="add" @click="$store.cart.add(item)">&plus;</button> &equals;
+            <span x-text="item.total"></span>
+          </div>
+        </div>
+        <i data-feather="trash-2" class="remove-item"></i>
+      </div>
+      </template>
+    </div>
+    <!-- Shopping Cart end -->
+    </nav>
+    
+    <div class="pilihan-button">
+      <div class="pilihan-button-box">
+        <button>Wanita</button>
+        <button>Pria</button>
+        <button>Anak</button>
+        <button>Sports</button>
+        <button>Beauty</button>
+        <button>Home</button>
+        <button>Lifestyle</button>
+        <button>Dewasa</button>
+      </div>
+    </div>
+    
+    <div class="promosi2">
+      <div class="promosi2-box">
+        <div class="promosi2-card">
+          <div class="row row-cols-1 row-cols-md-6 g-4">
+            <div class="col">
+              <div class="card" style="border: none;">
+                <img src="../img/pilih1.png" class="card-img-top" alt="...">
+                <p style="margin-top: 15px;">Tas Selempang</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="border: none;">
+                <img src="../img/pilih2.png" class="card-img-top" alt="...">
+                <p style="margin-top: 15px;">Jaket</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="border: none;">
+                <img src="../img/pilih3.png" class="card-img-top" alt="...">
+                <p style="margin-top: 15px;">Kaos T-Shirt</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="border: none;">
+                <img src="../img/pilih4.png" class="card-img-top" alt="...">
+                <p style="margin-top: 15px;">Sepatu</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="border: none;">
+                <img src="../img/pilih5.png" class="card-img-top" alt="...">
+                <p style="margin-top: 15px;">Gaun</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="border: none;">
+                <img src="../img/pilih6.png" class="card-img-top" alt="...">
+                <p style="margin-top: 15px;">Jam Tangan</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="iklan">
+      <div class="iklan-box">
+        <h2>Rekomendasi yang pas untuk kamu</h2>
+        <img src="../img/promo1.png">
+      </div>
+    </div>
+    
+    <section class="products" id="products" x-data="products">
+    <div class="produk1">
+      <div class="produk1-box">
+        <h2>Sangat ramah dikantong</h2>
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+      <template x-for="(item, index) in items" x-key="index">
+      <div class="col">
+        <div class="card">
+          <img :src="`../img/${item.img}`" class="card-img-top" :alt="item.name">
+          <div class="card-body">
+            <h5 class="card-title" style="color: #D20062;" alt="..." x-text="item.name"></h5>
+            <p class="card-text">Sesuai dengan namanya sepatu ini tidak akan rusak walau dibakar secara langsung.</p>
+            <h2>Rp. <span x-text="item.price"></span></h2>
+            <button type="button" class="btn btn-outline-dark" style="width: 100%; height: 80px; font-size: 20px;" @click="$store.cart.add(item)">Masukkan ke keranjang</button>
+          </div>
+        </div>
+      </div>
+      </template>
+        </div>
+      </div>
+    </div>
+    </section>
+    
+    <div class="iklan2">
+      <img src="../img/diskon1.png">
+    </div>
+    
+    <div class="produk-baru">
+      <div class="produk-baru-card">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+          <div class="col">
+            <div class="card">
+              <img src="../img/new1.png" class="card-img-top" alt="...">
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="../img/new2.png" class="card-img-top" alt="...">
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="../img/new3.png" class="card-img-top" alt="...">
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="../img/new4.png" class="card-img-top" alt="...">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="iklan2">
+      <img src="../img/diskon2.png">
+    </div>
+    
+    <div class="produk1" id="kolek-baru">
+      <div class="produk1-box">
+        <h2>Koleksi terbaru</h2>
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="col">
+        <div class="card">
+          <img src="../img/produk1.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title" style="color: #D20062;">Sepatu Api</h5>
+            <p class="card-text">Sesuai dengan namanya sepatu ini tidak akan rusak walau dibakar secara langsung.</p>
+            <h2>Rp 3.000.000,00</h2>
+            <button type="button" class="btn btn-outline-dark" style="width: 100%; height: 80px; font-size: 20px;">Masukkan ke keranjang</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="../img/produk2.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title" style="color: #D20062;">Baju anak</h5>
+            <p class="card-text">Baju anak import dari brazil ini menggunakan kualitas yang bagus dan cocok untuk anak kecil.</p>
+            <h2>Rp 3.000.000,00</h2>
+            <button type="button" class="btn btn-outline-dark" style="width: 100%; height: 80px; font-size: 20px;">Masukkan ke keranjang</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="../img/produk3.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title" style="color: #D20062;">Triset</h5>
+            <p class="card-text">Baju dari merek terkenal ini mampu membuat anda terkenal walau tidak dipakai.</p>
+            <h2>Rp 3.000.000,00</h2>
+            <button type="button" class="btn btn-outline-dark" style="width: 100%; height: 80px; font-size: 20px;">Masukkan ke keranjang</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="../img/produk4.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title" style="color: #D20062;">Zara</h5>
+            <p class="card-text">Baju yang terbuat dsri bahan alami,100% original dan nyaman saat dipakai.</p>
+            <h2>Rp 3.000.000,00</h2>
+            <button type="button" class="btn btn-outline-dark" style="width: 100%; height: 80px; font-size: 20px;">Masukkan ke keranjang</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="../img/produk1.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title" style="color: #D20062;">Sepatu Api</h5>
+            <p class="card-text">Sesuai dengan namanya sepatu ini tidak akan rusak walau dibakar secara langsung.</p>
+            <h2>Rp 3.000.000,00</h2>
+            <button type="button" class="btn btn-outline-dark" style="width: 100%; height: 80px; font-size: 20px;">Masukkan ke keranjang</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="../img/produk2.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title" style="color: #D20062;">Baju anak</h5>
+            <p class="card-text">Baju anak import dari brazil ini menggunakan kualitas yang bagus dan cocok untuk anak kecil.</p>
+            <h2>Rp 3.000.000,00</h2>
+            <button type="button" class="btn btn-outline-dark" style="width: 100%; height: 80px; font-size: 20px;">Masukkan ke keranjang</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="../img/produk3.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title" style="color: #D20062;">Triset</h5>
+            <p class="card-text">Baju dari merek terkenal ini mampu membuat anda terkenal walau tidak dipakai.</p>
+            <h2>Rp 3.000.000,00</h2>
+            <button type="button" class="btn btn-outline-dark" style="width: 100%; height: 80px; font-size: 20px;">Masukkan ke keranjang</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="../img/produk4.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title" style="color: #D20062;">Zara</h5>
+            <p class="card-text">Baju yang terbuat dsri bahan alami,100% original dan nyaman saat dipakai.</p>
+            <h2>Rp 3.000.000,00</h2>
+            <button type="button" class="btn btn-outline-dark" style="width: 100%; height: 80px; font-size: 20px;">Masukkan ke keranjang</button>
+          </div>
+        </div>
+      </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="tentang-kami">
+      <div class="tentang-kami-box">
+        <h2>Baca Thread Tentang Kami</h2>
+        <img src="../img/thread.png">
+        <p class="judul">Membuat Penampilan Anda Semakin Elegan</p>
+        <p>Buat sebagian orang, produk nama_website adalah sebuah kebutuhan walaupun untuk memilikinya harus merogoh kocek lebih dalam karena umumnya dipatok dengan harga tinggi terutama untuk produk yang termasuk edisi terbatas. Selain karena kualitasnya premium, produk luxury brand banyak disukai karena bisa meningkatkan kepercayaan diri buat pemakainya. Disamping itu produk branded juga bisa dijadikan investasi menguntungkan, lho.</p>
+        <p class="judul">Bekerja Sama Dengan Brand Yang Terkenal</p>
+        <p>Oleh karena harga yang dibanderol pada produk nama_website brand tidak bisa dibilang murah, maka pastikan membeli produk yang original. Dan supaya tidak tertipu penjual nakal, jika membeli secara online untuk amannya bisa belanja di toko online terpercaya. Berikut beberapa produk luxury brand terbaik yang bisa dijadikan koleksi</p>
+        <p class="judul">Dengan Brand Original</p>
+        <p>Kini bukan lagi perkara sukar untuk mendapatkan produk premium nama_website brand karena kamu hanya perlu berkunjung ke nama_brand Indonesia. Belanja di toko fashion online terlengkap ini dijamin bebas was-was karena semua produk dijamin 100% original. Proses cepat, mudah dan praktis karena kamu bisa melakukan transaksi di mana saja dan kapan saja. Bahkan belanja bisa lebih hemat karena ada penawaran diskon istimewa. Yuk, beli produk incaranmu di nama_brand Indonesia!</p>
+      </div>
+    </div>
+    
+    <footer class="footer">
+      <div class="footer-box">
+      <div class="row row-cols-1 row-cols-md-5">
+        <div class="col">
+          <a href="">Tentang Fashionku</a>
+        </div>
+        <div class="col">
+          <a href="">Kebijakan privasi</a>
+        </div>
+        <div class="col">
+          <a href="">Hubungi kami</a>
+        </div>
+        <div class="col">
+          <a href="">Pesyaratan & ketentuan</a>
+        </div>
+        <div class="col">
+          <a href="">Bantuan</a>
+        </div>
+      </div>
+      </div>
+      <div class="footer-box2">
+        <p>&copy;2024 Original website by marcell</p>
+      </div>
+    </footer>
+    
+    <!-- feather icon -->
+    <script>
+      feather.replace();
+    </script>
+    
+    <script src="../js/script.js"></script>
+    
+    <script src="../js/bootstrap.min.js"></script>
+  </body>
+</html>
